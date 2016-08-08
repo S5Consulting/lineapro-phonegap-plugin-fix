@@ -112,7 +112,7 @@
     if (error) {
         NSLog(@"discoverDevices Error: %@", error.description);
         NSString* retStr = [ NSString stringWithFormat:@"LineaProCDV.onBluetoothDiscoverComplete(%i, [], '%@');", false, error.description];
-        [webView evaluateJavaScript:retStr completionHandler:nil];
+        [self.webViewEngine evaluateJavaScript:retStr completionHandler:nil];
         //[[super webView] stringByEvaluatingJavaScriptFromString:retStr];
     } else {
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:btDevices options:NSJSONWritingPrettyPrinted error:&error2];
